@@ -20,7 +20,7 @@ public class Controller : ControllerBase
     [HttpGet("get")]
     public IActionResult GetRecords()
     {
-        _storage.Sort();
+        _storage.Sort((r1, r2) => string.Compare(r1.Id, r2.Id, StringComparison.Ordinal));
         if (_storage.Count == 0) return BadRequest(new { message = "Empty storage" });
         var storage = _storage;
         _storage = [];
