@@ -5,7 +5,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowGithubIO",
         policy =>
         {
-            policy.WithOrigins("https://marshmalllows.github.io/").AllowAnyMethod().AllowAnyHeader();
+            policy.WithOrigins("https://marshmalllows.github.io").AllowAnyMethod().AllowAnyHeader();
         });
 }); 
 
